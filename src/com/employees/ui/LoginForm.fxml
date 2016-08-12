@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="MainPane" prefHeight="470.0" prefWidth="470.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.employees.ui.controllers.LoginFormController">
+    <stylesheets>
+        <URL value="@/com/employees/ui/stylesheets/loginform.css" />
+    </stylesheets>
+   <children>
+      <Accordion prefHeight="400.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <panes>
+          <TitledPane graphicTextGap="10.0" text="System Login" fx:id="panelogin">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane  animated="false" collapsible="false" layoutX="20.0" layoutY="14.0" prefHeight="324.0" prefWidth="398.0" text="Select A Username and Enter Password" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="356.0">
+                                 <children>
+                                    <VBox layoutX="6.0" layoutY="14.0" spacing="10.0">
+                                       <children>
+                                          <ListView layoutX="6.0" layoutY="14.0" prefHeight="186.0" prefWidth="394.0" />
+                                          <PasswordField prefHeight="25.0" prefWidth="391.0" promptText="Enter Password" />
+                                          <HBox>
+                                             <children>
+                                                <Button id="btnlogin" fx:id="btnlogin" onAction="#loginHandler"  layoutX="16.0" layoutY="240.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="392.0" text="Login" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" graphicTextGap="10.0" text="Server Settings" fx:id="panesettings">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane animated="false" collapsible="false" layoutX="49.0" layoutY="14.0" prefHeight="324.0" prefWidth="398.0" text="System Server Settings" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="386.0">
+                                 <children>
+                                    <VBox prefHeight="278.0" prefWidth="376.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                       <children>
+                                          <TextField promptText="Server Hostname/IP Address" />
+                                          <Slider majorTickUnit="1.0" max="65536.0" min="1.0" minorTickCount="0" snapToTicks="true" value="80.0" />
+                                          <TextField promptText="Server Port" />
+                                          <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="336.0" text="Button" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" graphicTextGap="10.0" text="Login Assistance" fx:id="panehelp">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
