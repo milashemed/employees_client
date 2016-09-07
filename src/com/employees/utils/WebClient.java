@@ -57,9 +57,17 @@ public class WebClient {
         }
         return output.toString();
     }
-    public String sendGET(){
-        
-    return null;
+    public String sendGET() throws ProtocolException, IOException{
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Content-Type", "text/plain"); 
+        conn.setRequestProperty("charset", ENCODING);
+        conn.connect();
+        Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(),ENCODING));
+        StringBuilder output = new StringBuilder();
+        for (int c;(c=in.read())>=0;){
+        output.append((char)c);
+        }
+        return output.toString();
     }
     private byte[] processParams(Map<String,String> params){
     StringBuilder postdata = new StringBuilder();
