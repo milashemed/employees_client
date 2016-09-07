@@ -6,6 +6,10 @@
 package com.employees.utils;
 
 import java.util.prefs.Preferences;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -17,8 +21,20 @@ public class NetConfig {
     private Preferences PREFERENCES;
     final  String HOST = "HOST";
     final String PORT = "PORT";
+    StringProperty hostProperty = new SimpleStringProperty();
+    IntegerProperty portProperty = new SimpleIntegerProperty();
+
+    public StringProperty getHostProperty() {
+        return hostProperty;
+    }
+
+    public IntegerProperty getPortProperty() {
+        return portProperty;
+    }
     public NetConfig(){
     this.PREFERENCES = Preferences.userRoot().node(this.getClass().getName());
+    this.hostProperty.set(this.PREFERENCES.get(HOST, "127.0.0.1"));
+    this.portProperty.set(this.PREFERENCES.getInt(PORT, 80));
     }
     public String getNetworkConfig(){
         StringBuilder Address = new StringBuilder();
@@ -39,6 +55,7 @@ public class NetConfig {
 
     public void setHost(String host) {
         this.host = host;
+        this.hostProperty.set(host);
     }
 
     public int getPort() {
@@ -47,6 +64,7 @@ public class NetConfig {
 
     public void setPort(int port) {
         this.port = port;
+        this.portProperty.set(port);
     }
     
 }
